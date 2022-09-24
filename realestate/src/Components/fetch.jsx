@@ -8,7 +8,7 @@ const Fetch= () => {
     
     useEffect(()=>{
         const fetct = async()=>{
-            const {data} = await axios.get(`http://localhost:3001/data`)
+            const {data} = await axios.get(`https://realestate-sumit.herokuapp.com/data`)
             console.log(data)
             setItem(data);
         }
