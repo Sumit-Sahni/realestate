@@ -1,19 +1,22 @@
 import React from 'react'
 import axios from 'axios'
-import { useEffect, useState} from 'react'
+import { useEffect, useState} from 'react' 
+
 
 
 const Fetch= () => {
     const [item, setItem] = useState([]);
     
-    useEffect(()=>{
-        const fetct = async()=>{
-            const {data} = await axios.get(`http://localhost:3001/data`)
-            console.log(data)
-            setItem(data);
-        }
-        fetct()
-    },[])
+       useEffect(()=>{
+          fetch("http://localhost:3500/data")
+          .then(res =>{
+            return res.json();
+          })
+          .then(data =>{
+              console.log(data)
+              setItem(data)
+          })
+       },[])
    
        
     
@@ -22,12 +25,10 @@ const Fetch= () => {
   return (
     <div>
          {
-            item.map((items, index)=>{
-               return (
-                <div key={index}>
-                     <h1>{items.name}</h1>
-                </div>
-               )
+            item.map((items)=>{
+                return(
+                  items.name
+                )
             })
          }
 
