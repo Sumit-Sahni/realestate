@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "json-server -p 3006 -w db.json"
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix realestate && npm run build --prefix realestate"
   },
   "author": "",
   "license": "ISC",
