@@ -1,34 +1,21 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const path = require('path');
-const dotenv = require('dotenv');
+const jsonServer = require("json-server");
+const cors = require("cors");
+const server = jsonServer.create();
+const router = jsonServer.router("./db.json");
+const middleWares = jsonServer.defaults({
+  static: "./build",
+});
 
-dotenv.config();
-app.use(cors());
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false })); 
-app.use('/public', express.static(path.join(__dirname, 'public')));
+const port  = process.env.PORT || 8001;
+server.use(middleWares);
+server.use(
+  jsonServer.rewriter({
+    "/api/*": "/$1",
+  })
+);
 
-// app.get("/", (req, res)=>{
-//     res.send("Hello")
-// })
-
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'realestate/build')));
-    
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'realestate/build/index.html'));
-    });
-}else{
-    app.get("/",(req,res)=>{
-      res.send("APi is running")
-    } )
-}
-
-const PORT = process.env.PORT;  
-app.listen(PORT,()=>{
-    console.log("Api is Running")
-})
+server.use(router);
+server.use(cors());
+server.listen(port, ()=>{
+    console.log(`Server is runnig on ${port}`);
+});

@@ -1,0 +1,50 @@
+{
+    "data" :[
+        {
+            "id":1,
+            "name":"Palm Harbor",
+            "price": "$980",
+            "location":"pune",
+            "image":"https://unsplash.com/photos/9gGvNWBeOq4/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHx8fDE2NjM4NzkxNTg&force=true&w=1920",
+            "more":[
+                {
+                    "beds":3,
+                    "bathroom":2,
+                    "area":"5x7"
+                }
+            ]
+            
+        },
+        {
+            "id":2,
+            "name":"JW Marriott",
+            "price": "$1180",
+            "location":"mumbai",
+            "image":"https://unsplash.com/photos/9gGvNWBeOq4/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHx8fDE2NjM4NzkxNTg&force=true&w=1920",
+            "more":[
+                {
+                    "beds":5,
+                    "bathroom":3,
+                    "area":"15x15"
+                }
+            ]
+            
+        },
+        {
+            "id":3,
+            "name":"DLF builds",
+            "price": "$880",
+            "location":"Delhi",
+            "image":"https://unsplash.com/photos/9gGvNWBeOq4/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHx8fDE2NjM4NzkxNTg&force=true&w=1920",
+            "more":[
+                {
+                    "beds":2,
+                    "bathroom":2,
+                    "area":"5x7"
+                }
+            ]
+            
+        }
+    ]
+}
+   

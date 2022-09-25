@@ -2,34 +2,30 @@ import React from 'react'
 import axios from 'axios'
 import { useEffect, useState} from 'react' 
 
-
-
 const Fetch= () => {
-    const [item, setItem] = useState([]);
-    
-       useEffect(()=>{
-        const load = async() =>{
-          const devEnv = process.env.NODE_ENV !=="production";
-          const {REACT_AP} = process.env;
-          const response = await axios.get(`${devEnv ? REACT_AP:REACT_APP_DEV}`);
-        }
-       
-       },[])
+  const [data, setData] = useState([])
    
-       
+  useEffect(()=>{
+          const getData = async()=>{
+            const store = await axios.get("http://localhost:8001/data")
+            console.log(store.data)
+            setData(store.data)
+          }
+          getData();
+          
+  },[])
     
 
 
   return (
     <div>
-         {
-            item.map((items)=>{
+          {
+            data.map((item)=>{
                 return(
-                  items.name
+                  item.name
                 )
             })
-         }
-
+          }
     </div>
   )
 }
