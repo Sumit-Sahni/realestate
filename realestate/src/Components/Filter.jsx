@@ -58,8 +58,6 @@ import { useState , useEffect} from 'react';
                   <option value="1180">$1180</option>
                   <option value="980">$980</option>
                   <option value="880">$880</option>
-                  <option value="500">$500</option>
-  
             </select>
             </div>
         </div>
