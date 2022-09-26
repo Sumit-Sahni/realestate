@@ -1,10 +1,13 @@
-import Fetch from "./Components/fetch";
+import Filter from "./Components/Filter";
+import NavbarComp from "./Components/NavbarComp";
+
 
 
 function App() {
   return (
     <>
-        <Fetch/>
+        <NavbarComp/>
+        <Filter/>
     </>
   );
 }
